@@ -6,7 +6,7 @@ public class test : EventQS
 {
     void Update()
     {
-        if(isEffectActive)
+        if(GetEffectStatus())
         {
             Debug.Log("aktywuje efekt!");
         }

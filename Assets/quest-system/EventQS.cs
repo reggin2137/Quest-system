@@ -11,8 +11,24 @@ public class EventQS : MonoBehaviour
     }
     public Type type;
     [Header("variables for effect")]
-    public bool isEffectActive;
+    [SerializeField] bool isEffectActive;
+    public void SetEffect(bool value)
+    {
+        isEffectActive = value;
+    }
+    public bool GetEffectStatus()
+    {
+        return isEffectActive;
+    }
 
     [Header("variables for condition")]
-    public bool isConditionDone;
+    [SerializeField] bool isConditionDone;
+    public void SetCondition(bool value)
+    {
+        isConditionDone = value;
+    }
+    public bool GetConditionStatus()
+    {
+        return isConditionDone;
+    }
 }

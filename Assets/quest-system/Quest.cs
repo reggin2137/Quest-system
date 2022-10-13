@@ -37,7 +37,7 @@ public class Quest : MonoBehaviour
         }
         foreach(EventQS i in conditions)
         {
-            if(i.isConditionDone)
+            if(i.GetConditionStatus())
             {
                 conditions.Remove(i);
                 controlVar--;
@@ -49,7 +49,7 @@ public class Quest : MonoBehaviour
     {
         foreach(EventQS i in effects)
         {
-            i.isEffectActive = true;
+            i.SetEffect(true);
         }
     }
 }
