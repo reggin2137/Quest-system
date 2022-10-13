@@ -9,12 +9,19 @@ public class EventQS : MonoBehaviour
         condition,
         effect,
     }
-    public Type type;
+    Type type;
     [Header("variables for effect")]
     [SerializeField] bool isEffectActive;
     public void SetEffect(bool value)
     {
-        isEffectActive = value;
+        if (GetType() == Type.effect)
+        {
+            isEffectActive = value;
+        }
+        else
+        {
+            Debug.LogError("Event is not effect. You can't set effect");
+        }
     }
     public bool GetEffectStatus()
     {
@@ -25,10 +32,30 @@ public class EventQS : MonoBehaviour
     [SerializeField] bool isConditionDone;
     public void SetCondition(bool value)
     {
-        isConditionDone = value;
+        if(GetType() == Type.condition)
+        {
+            isConditionDone = value;
+        }
+        else
+        {
+            Debug.LogError("Event is not condition. You can't set condition");
+        }
     }
     public bool GetConditionStatus()
     {
         return isConditionDone;
+    }
+
+    public void SetType(Type eventType)
+    {
+        type = eventType;
+    }
+    public void SetType(byte index)
+    {
+        type = (Type)index;
+    }
+    public Type GetType()
+    {
+        return type;
     }
 }

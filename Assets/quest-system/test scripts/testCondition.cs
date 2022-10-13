@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : EventQS
+public class testCondition : EventQS
 {
     private void Start()
     {
-        SetType(Type.effect);
+        SetType(Type.condition);
     }
     void Update()
     {
-        if(GetEffectStatus())
+        if(Input.GetKeyDown(KeyCode.W))
         {
-            Debug.Log("aktywuje efekt!");
+            SetCondition(true);
         }
     }
 }

@@ -18,7 +18,7 @@ public class Quest : MonoBehaviour
         // pêtla segreguj¹ca skutki i warunki
         foreach (EventQS i in eventsQS)
         {
-            if(i.type == EventQS.Type.condition)
+            if(i.GetType() == EventQS.Type.condition)
             {
                 conditions.Add(i);
             }else
